@@ -3,6 +3,7 @@ import '../configureAmplify';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { Auth, Hub } from 'aws-amplify';
+import Head from 'next/head';
 
 function MyApp({ Component, pageProps }) {
   const [signedInUser, setSignedInUser] = useState(false);
@@ -29,6 +30,10 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <div>
+      <Head>
+        <title>Social blog</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
       <nav className="p-6 border-b border-gray-300">
         <Link href="/">
           <span className="mr-6 cursor-pointer">Home</span>
