@@ -1,1 +1,22 @@
-{}
+{
+  "api": {
+    "SocialBlog": {
+      "service": "AppSync",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "output": {
+        "authConfig": {
+          "defaultAuthentication": {
+            "authenticationType": "API_KEY",
+            "apiKeyConfig": {
+              "apiKeyExpirationDays": 180,
+              "apiKeyExpirationDate": "2023-03-17T05:13:55.046Z",
+              "description": "public"
+            }
+          },
+          "additionalAuthenticationProviders": []
+        }
+      }
+    }
+  }
+}
