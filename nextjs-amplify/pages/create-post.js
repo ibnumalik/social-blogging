@@ -1,9 +1,10 @@
 import { withAuthenticator } from '@aws-amplify/ui-react';
-import { API } from 'aws-amplify';
-import { useRouter } from 'next/router';
 import { useState } from 'react';
+import { API } from 'aws-amplify';
 import { v4 as uuid } from 'uuid';
-
+import { useRouter } from 'next/router';
+import SimpleMDEEditor from 'react-simplemde-editor';
+import 'easymde/dist/easymde.min.css';
 import { createPost } from '../graphql/mutations';
 
 const initialState = { title: '', content: '' };
@@ -43,7 +44,7 @@ function CreatePost() {
         value={post.title}
         className="border-b pb-2 text-lg my-4 focus:outline-none w-full font-light text-gray-500 placeholder-gray-500 y-2"
       />
-      <SimpleMDE
+      <SimpleMDEEditor
         value={post.content}
         onChange={(value) => setPost({ ...post, content: value })}
       />
