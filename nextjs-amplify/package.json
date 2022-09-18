@@ -9,9 +9,14 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@aws-amplify/ui-react": "^3.5.2",
+    "aws-amplify": "^4.3.35",
     "next": "12.3.0",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "react-markdown": "^8.0.3",
+    "react-simplemde-editor": "^4.1.5",
+    "uuid": "^9.0.0"
   },
   "devDependencies": {
     "eslint": "8.23.1",
