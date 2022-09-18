@@ -3,18 +3,33 @@
     "SocialBlog": {
       "service": "AppSync",
       "providerPlugin": "awscloudformation",
-      "dependsOn": [],
+      "dependsOn": [
+        {
+          "category": "auth",
+          "resourceName": "amplifynextjs6538989f",
+          "attributes": [
+            "UserPoolId"
+          ]
+        }
+      ],
       "output": {
         "authConfig": {
           "defaultAuthentication": {
             "authenticationType": "API_KEY",
             "apiKeyConfig": {
               "apiKeyExpirationDays": 180,
-              "apiKeyExpirationDate": "2023-03-17T05:13:55.046Z",
+              "apiKeyExpirationDate": "2023-03-17T06:22:37.909Z",
               "description": "public"
             }
           },
-          "additionalAuthenticationProviders": []
+          "additionalAuthenticationProviders": [
+            {
+              "authenticationType": "AMAZON_COGNITO_USER_POOLS",
+              "userPoolConfig": {
+                "userPoolId": "authamplifynextjs6538989f"
+              }
+            }
+          ]
         }
       }
     }

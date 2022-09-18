@@ -6,13 +6,19 @@
     "defaultAuthType": {
       "mode": "API_KEY",
       "expirationTime": 180,
-      "apiKeyExpirationDate": "2023-03-17T05:13:55.046Z",
+      "apiKeyExpirationDate": "2023-03-17T06:22:37.909Z",
       "keyDescription": "public"
     },
     "conflictResolution": {
       "defaultResolutionStrategy": {
         "type": "AUTOMERGE"
       }
-    }
+    },
+    "additionalAuthTypes": [
+      {
+        "mode": "AMAZON_COGNITO_USER_POOLS",
+        "cognitoUserPoolId": "authamplifynextjs6538989f"
+      }
+    ]
   }
 }

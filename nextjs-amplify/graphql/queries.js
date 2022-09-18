@@ -7,6 +7,7 @@ export const getPost = /* GraphQL */ `
       id
       title
       content
+      username
       createdAt
       updatedAt
       _version
@@ -26,6 +27,7 @@ export const listPosts = /* GraphQL */ `
         id
         title
         content
+        username
         createdAt
         updatedAt
         _version
@@ -54,6 +56,38 @@ export const syncPosts = /* GraphQL */ `
         id
         title
         content
+        username
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+      }
+      nextToken
+      startedAt
+    }
+  }
+`;
+export const postsByUsername = /* GraphQL */ `
+  query PostsByUsername(
+    $username: String!
+    $sortDirection: ModelSortDirection
+    $filter: ModelPostFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    postsByUsername(
+      username: $username
+      sortDirection: $sortDirection
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        id
+        title
+        content
+        username
         createdAt
         updatedAt
         _version
