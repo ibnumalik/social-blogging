@@ -1,19 +1,6 @@
-import { withAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react';
-import { Auth } from 'aws-amplify';
-import { useEffect, useState } from 'react';
+import { withAuthenticator } from '@aws-amplify/ui-react';
 
-function Profile() {
-  const [user, setUser] = useState(null);
-
-  useEffect(() => {
-    checkUser();
-  }, []);
-
-  async function checkUser() {
-    const user = await Auth.currentAuthenticatedUser();
-    setUser(user);
-  }
-
+function Profile({ signOut, user }) {
   if (!user) return null;
 
   return (
@@ -25,7 +12,12 @@ function Profile() {
       <p className="text-sm text-gray-500 mb-6">
         Email: {user.attributes.email}
       </p>
-      <AmplifySignOut />
+      <button
+        className="rounded bg-red-600 text-white px-4 py-2"
+        onClick={signOut}
+      >
+        Sign out
+      </button>
     </div>
   );
 }
