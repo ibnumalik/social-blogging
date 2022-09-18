@@ -1,19 +1,18 @@
+import { withAuthenticator } from '@aws-amplify/ui-react';
 import { API, Auth } from 'aws-amplify';
 import { useEffect, useState } from 'react';
 import { postsByUsername } from '../graphql/queries';
 
-export default function MyPosts() {
+function MyPostsList({ user }) {
   const [posts, setPosts] = useState([]);
-
   useEffect(() => {
     fetchPosts();
   }, []);
 
   async function fetchPosts() {
-    const { username } = await Auth.currentAuthenticatedUser();
     const postData = await API.graphql({
       query: postsByUsername,
-      variables: { username },
+      variables: { user },
     });
     setPosts(postData.data.postsByUsername.items);
   }
@@ -34,3 +33,11 @@ export default function MyPosts() {
     </div>
   );
 }
+
+function MyPosts({ user }) {
+  if (!user) return null;
+
+  return <MyPostsList user={user} />;
+}
+
+export default withAuthenticator(MyPosts);
