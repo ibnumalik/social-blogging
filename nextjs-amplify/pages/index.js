@@ -8,7 +8,7 @@ export default function Home() {
 
   useEffect(() => {
     fetchPosts();
-  });
+  }, []);
 
   async function fetchPosts() {
     const postData = await API.graphql({ query: listPosts });
