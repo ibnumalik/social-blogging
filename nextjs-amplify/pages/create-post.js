@@ -1,5 +1,5 @@
 import { withAuthenticator } from '@aws-amplify/ui-react';
-import { useState } from 'react';
+import { useCallback, useState } from 'react';
 import { API } from 'aws-amplify';
 import { v4 as uuid } from 'uuid';
 import { useRouter } from 'next/router';
@@ -14,9 +14,9 @@ function CreatePost() {
   const { title, content } = post;
   const router = useRouter();
 
-  function onChange(e) {
+  const onChange = useCallback((e) => {
     setPost(() => ({ ...post, [e.target.name]: e.target.value }));
-  }
+  })
 
   async function createNewPost() {
     if (!title || !content) return;
