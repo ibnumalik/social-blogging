@@ -38,5 +38,10 @@ export async function getStaticProps({ params }) {
   const { id } = params;
   const postData = await API.graphql({ query: getPost, variables: { id } });
 
-  return { props: { post: postData.data.getPost } };
+  return {
+    props: {
+      post: postData.data.getPost,
+    },
+    revalidate: 1,
+  };
 }
