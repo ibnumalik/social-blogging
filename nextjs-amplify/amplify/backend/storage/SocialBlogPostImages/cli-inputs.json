@@ -1,0 +1,16 @@
+{
+  "resourceName": "SocialBlogPostImages",
+  "policyUUID": "9e0bd814",
+  "bucketName": "amplifynextjsb29fe0a362d0499e997ab4d27d141f03",
+  "storageAccess": "authAndGuest",
+  "guestAccess": [
+    "READ"
+  ],
+  "authAccess": [
+    "CREATE_AND_UPDATE",
+    "READ",
+    "DELETE"
+  ],
+  "triggerFunction": "NONE",
+  "groupAccess": {}
+}

@@ -17,4 +17,5 @@ type Post
   content: String!
   username: String
     @index(name: "postsByUsername", queryField: "postsByUsername")
+  coverImage: String
 }
