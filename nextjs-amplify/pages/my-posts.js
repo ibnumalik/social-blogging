@@ -4,6 +4,7 @@ import Link from 'next/link';
 
 import { postsByUsername } from '../graphql/queries';
 import { deletePost as deletePostMutation } from '../graphql/mutations';
+import { useRouter } from 'next/router';
 
 export async function getServerSideProps({ req }) {
   const { API, Auth } = withSSRContext({ req });
@@ -26,12 +27,20 @@ export async function getServerSideProps({ req }) {
 }
 
 function MyPostsList({ posts }) {
+  const router = useRouter();
+
+  const refreshData = () => {
+    router.replace(router.asPath);
+  };
+
   async function deletePost(id) {
     await API.graphql({
       query: deletePostMutation,
       variables: { input: { id } },
       authMode: 'AMAZON_COGNITO_USER_POOLS',
     });
+
+    refreshData();
   }
 
   return (
