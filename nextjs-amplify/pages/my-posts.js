@@ -26,13 +26,12 @@ export async function getServerSideProps({ req }) {
 }
 
 function MyPostsList({ posts }) {
-
   async function deletePost(id) {
     await API.graphql({
       query: deletePostMutation,
-      variables: { input: id },
-      authMode: "AMAZON_COGNITO_USER_POOLS"
-    })
+      variables: { input: { id } },
+      authMode: 'AMAZON_COGNITO_USER_POOLS',
+    });
   }
 
   return (

@@ -10,9 +10,6 @@ export const onCreatePost = /* GraphQL */ `
       username
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
     }
   }
 `;
@@ -25,9 +22,6 @@ export const onUpdatePost = /* GraphQL */ `
       username
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
     }
   }
 `;
@@ -40,9 +34,6 @@ export const onDeletePost = /* GraphQL */ `
       username
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
     }
   }
 `;

@@ -13,9 +13,6 @@ export const createPost = /* GraphQL */ `
       username
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
     }
   }
 `;
@@ -31,9 +28,6 @@ export const updatePost = /* GraphQL */ `
       username
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
     }
   }
 `;
@@ -49,9 +43,6 @@ export const deletePost = /* GraphQL */ `
       username
       createdAt
       updatedAt
-      _version
-      _deleted
-      _lastChangedAt
     }
   }
 `;
